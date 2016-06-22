@@ -9,10 +9,6 @@ export default {
             this.static = true;
             this.el.style.position = 'relative';
         }
-        
-        if (this.loadingBox !== null) {
-            this.loadingBox.remove();
-        }
 
         let box = document.createElement('div');
         box.className = 'vue-loading';
@@ -31,13 +27,13 @@ export default {
         this.loadingBox = box;
     },
     handleHide () {
-        this.loadingBox.addEventListener('transitionend', () => {
+        window.setTimeout(() => {
             this.loadingBox.remove();
 
             if (this.static) {
                 this.el.style.removeProperty('position');
             }
-        });
+        }, 400);
 
         this.loadingBox.style.opacity = 0;
     },

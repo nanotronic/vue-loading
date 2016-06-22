@@ -27,15 +27,18 @@ export default {
         this.loadingBox = box;
     },
     handleHide () {
+        let t = this;
+        let lb = t.loadingBox;
+
         window.setTimeout(() => {
-            this.loadingBox.remove();
+            lb.remove();
 
             if (this.static) {
                 this.el.style.removeProperty('position');
             }
         }, 400);
 
-        this.loadingBox.style.opacity = 0;
+        lb.style.opacity = 0;
     },
     bind () {
         // is static

@@ -9,6 +9,10 @@ export default {
             this.static = true;
             this.el.style.position = 'relative';
         }
+        
+        if (this.loadingBox !== null) {
+            this.loadingBox.remove();
+        }
 
         let box = document.createElement('div');
         box.className = 'vue-loading';

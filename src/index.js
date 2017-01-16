@@ -31,7 +31,7 @@ export default {
         let lb = t.loadingBox;
 
         window.setTimeout(() => {
-            lb.remove();
+            lb.parentNode.removeChild(lb);
 
             if (this.static) {
                 this.el.style.removeProperty('position');
